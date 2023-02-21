@@ -1,0 +1,151 @@
+.main-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f3f3f3;
+}
+.main-page .header {
+  width: 100%;
+  height: 100px;
+  background: #181718;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #dcb900 solid;
+}
+.main-page .header .fa-right-from-bracket {
+  color: #f3f3f3;
+  margin: 30px;
+  cursor: pointer;
+}
+.main-page .header h1 {
+  margin: 30px;
+  margin-right: 5px;
+  color: #dcb900;
+  font-family: "Courier New", Courier, monospace;
+}
+.main-page .content {
+  width: 80%;
+  margin: 40px auto;
+}
+.main-page .content .table-header {
+  background-color: #181718;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.main-page .content .table-header .btn-add {
+  background: #dcb900;
+  color: #181718;
+  display: flex;
+  align-items: baseline;
+}
+.main-page .content .tb-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 3px solid;
+  background-color: #ffffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.main-page .content .tb-container .table-headers {
+  background-color: #f3f3f3;
+}
+.main-page .content .tb-container .table-headers .control_panel {
+  text-align: center;
+}
+.main-page .content .tb-container .p_input {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.main-page .content .tb-container .pw_container {
+  display: flex;
+}
+.main-page .content .tb-container .control_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.main-page .content .tb-container .fa-solid {
+  cursor: pointer;
+}
+.main-page .form_dialog {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+}
+.main-page .form_dialog .form_container {
+  box-shadow: 1px 2px;
+  border-radius: 10px;
+  width: 40%;
+  background: #f3f3f3;
+  padding: 20px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.main-page .form_dialog .form_container .form_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  border-bottom: 1px #181718 solid;
+}
+.main-page .form_dialog .form_container .form_header div {
+  display: flex;
+}
+.main-page .form_dialog .form_container .form_header div h3 {
+  margin-right: 3px;
+  padding-bottom: 15px;
+  color: #dcb900;
+  font-family: "Courier New", Courier, monospace;
+}
+.main-page .form_dialog .form_container .form_header i {
+  cursor: pointer;
+}
+.main-page .form_dialog .form_container form {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  gap: 10px;
+}
+.main-page .form_dialog .form_container form .textfield {
+  background-color: #edece2;
+}
+.main-page .form_dialog .form_container form .btn-add {
+  background-color: #181718;
+}
+.main-page .confirm_dialog {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+.main-page .confirm_dialog .container {
+  box-shadow: 1px 2px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  padding: 20px;
+}
+.main-page .confirm_dialog .confirmation_buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-page .confirm_dialog .confirmation_buttons .no_btn {
+  color: #ff0000;
+}/*# sourceMappingURL=Home.css.map */
