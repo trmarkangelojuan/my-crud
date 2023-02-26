@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'; import {Link} from 'react-router-dom';
 import {ToastContainer, toast } from 'react-toastify';
-import {Button, Table,TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField } from '@mui/material';
+import {Button, Table,TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import '../styles/Home.css';
 import 'react-toastify/dist/ReactToastify.css';
+import FormDialog from '../components/ModalForm';
 
 const initialState = {
     DESCRIPTION: '',
@@ -28,7 +29,6 @@ const Home = () => {
 
     const notifyDeleteSuccess = (note) => toast.success(note,{toastId: 'success1'}); const notifySuccess = (note) => toast.success(note);
     const notifyWarning = (note) => toast.warn(note);
-    
 
     useEffect (() => {
         retrieve();
@@ -192,23 +192,7 @@ const Home = () => {
             </div>
 
 
-            {/* form dialog */}
-            {showForm && <div className='form_dialog'>
-                <div className='form_container'>
-                    <div className='form_header'><div><h3>MyPass <i className="fa-solid fa-lock"></i></h3></div> <i className="fa-solid fa-xmark" onClick={() => {reset()}}></i></div>
-                    <form onSubmit={handleSubmit}>
-                        <label>Description/Title</label>
-                        <TextField name='DESCRIPTION' label={<i className="fa-sharp fa-solid fa-t"></i>} type='text' variant="outlined" value={DESCRIPTION} onChange={handleInputChange} inputProps={{ maxLength: 40}} className='textfield'/>
-                        <label>Website/App</label>
-                        <TextField name='WEBSITE' label={<i className="fa-solid fa-link"></i>} type='text' variant="outlined" value={WEBSITE} onChange={handleInputChange} inputProps={{ maxLength: 80}} className='textfield'/>
-                        <label>Email/Phone</label>
-                        <TextField name='EMAIL' label={<i className="fa-solid fa-envelope"></i>} type='text' variant="outlined" value={EMAIL} onChange={handleInputChange} inputProps={{ maxLength: 50}} className='textfield'/>
-                        <label>Password</label>
-                        <TextField name='PASSWORD' label={<i className="fa-solid fa-key"></i>} type='password' variant="outlined" value={PASSWORD} onChange={handleInputChange} inputProps={{ maxLength: 80}} className='textfield'/>
-                        <Button className='btn-add' type='submit' variant="contained" size="medium"> Save </Button>
-                    </form>
-                </div>
-            </div> }
+            {showForm && <FormDialog reset={reset} handleSubmit={handleSubmit} handleInputChange={handleInputChange} DESCRIPTION={DESCRIPTION} WEBSITE={WEBSITE} EMAIL={EMAIL} PASSWORD={PASSWORD} />}
 
             {/* delete-confirmation dialog */}
             {showConfirmation && <div className='confirm_dialog'>

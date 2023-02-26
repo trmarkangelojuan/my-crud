@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/Landing.css';
 import {Button} from '@mui/material';
 import {Link} from 'react-router-dom';
-import titleimg from '../styles/assets/keys.png'
+import titleimg from '../styles/assets/keysimg.png'
 
 const Login = () => {
   return (
@@ -19,7 +19,7 @@ const Login = () => {
                 <Link className='lnk' to='/Home'><Button className='btn' variant='contained'>Try now</Button></Link>
             </div>
             <div className='image-div'>
-                <img src={titleimg} alt="photo"/>
+                <img src={titleimg} alt="title_image"/>
             </div>
         </div>
         
