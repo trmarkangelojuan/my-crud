@@ -5,6 +5,7 @@ import {Button, Table,TableBody, TableCell, TableContainer, TableHead, TableRow,
 import '../styles/Home.css';
 import 'react-toastify/dist/ReactToastify.css';
 import FormDialog from '../components/ModalForm';
+import ConfirmDialog from '../components/ModalConfirm'
 
 const initialState = {
     DESCRIPTION: '',
@@ -144,6 +145,7 @@ const Home = () => {
         setState({DESCRIPTION: '', WEBSITE: '', EMAIL: '', PASSWORD: '', DATE: new Date().toLocaleString() + ''});
         setUpdating(false);
         setShowForm(false);
+        setShowConfirmation(false);
         setID(0);
         setFromMultiple(false);
         setTimeout(() => retrieve(), 500);
@@ -191,16 +193,11 @@ const Home = () => {
                 </div>
             </div>
 
-
+            {/* form dialog */}
             {showForm && <FormDialog reset={reset} handleSubmit={handleSubmit} handleInputChange={handleInputChange} DESCRIPTION={DESCRIPTION} WEBSITE={WEBSITE} EMAIL={EMAIL} PASSWORD={PASSWORD} />}
 
             {/* delete-confirmation dialog */}
-            {showConfirmation && <div className='confirm_dialog'>
-                <div className='container'>
-                    <div>Are you sure?</div>
-                    <div className='confirmation_buttons'><Button className='no_btn' variant="text" onClick={() => {setShowConfirmation(false); setID(0);}}>No</Button><Button variant="text" onClick={handleDelete}>Yes</Button></div>
-                </div>
-            </div>}
+            {showConfirmation && <ConfirmDialog no={reset} yes={handleDelete} /> }
 
             <ToastContainer />
         </div>
