@@ -67,7 +67,10 @@ $primaryFont:'Courier New', Courier, monospace;
 
             .table-headers{
                 background-color: $primaryColor;
-
+                
+                .cell-title,.control_panel{
+                    font-weight: bold;
+                }
                 .control_panel{
                     text-align: center;
                 }
@@ -96,100 +99,97 @@ $primaryFont:'Courier New', Courier, monospace;
 
     }
     
-      
+}
 
+.form_dialog{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
 
-    .form_dialog{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        min-height: 100vh;
-        background-color: rgba(0, 0, 0, 0.6);
+    .form_container{
+        box-shadow: 1px 1px;
+        border-radius: 10px;
+        width: 40%;
+        background: $primaryColor;
+        padding: 20px;
+        gap: 20px;
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
-        position: fixed;
 
-        .form_container{
-            box-shadow: 1px 2px;
-            border-radius: 10px;
-            width: 40%;
-            background: $primaryColor;
-            padding: 20px;
-            gap: 20px;
+        .form_header{
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            border-bottom: 1px $secondaryColor solid;
+            
+            div{
+                display: flex;
+                h3{
+                    margin-right: 3px;
+                    padding-bottom: 15px;
+                    color: #dcb900;
+                    font-family: $primaryFont;
+                }
+            }
+
+            i{
+                cursor: pointer;
+            }
+
+        }
+
+        form{
             display: flex;
             flex-direction: column;
+            background-color: $primaryColor;
+            gap: 10px;
 
-            .form_header{
-                display: flex;
-                justify-content: space-between;
-                padding: 0;
-                border-bottom: 1px $secondaryColor solid;
-                
-                div{
-                    display: flex;
-                    h3{
-                        margin-right: 3px;
-                        padding-bottom: 15px;
-                        color: #dcb900;
-                        font-family: $primaryFont;
-                    }
-                }
-
-                i{
-                    cursor: pointer;
-                }
-
+            .textfield{
+                background-color: #edece2;
             }
-    
-            form{
-                display: flex;
-                flex-direction: column;
-                background-color: $primaryColor;
-                gap: 10px;
 
-                .textfield{
-                    background-color: #edece2;
-                }
-
-                .btn-add{
-                    background-color: $secondaryColor;
-                }
+            .btn-add{
+                background-color: $secondaryColor;
             }
         }
     }
+}
 
-    .confirm_dialog{
-        width: 100%;
-        min-height: 100vh;
-        background-color: rgba(0, 0, 0, 0.4);
-        position: absolute;
-        top: 0;
+.confirm_dialog{
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+
+    .container{
+        box-shadow: 1px 1px;
+       width: 300px;
+       border-radius: 10px;
+       background-color: $primaryColor;
+       padding: 20px;
+       
+    }
+
+    .confirmation_buttons{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
+        justify-content: flex-end;
 
-        .container{
-            box-shadow: 1px 2px;
-           width: 300px;
-           border-radius: 10px;
-           background-color: $primaryColor;
-           padding: 20px;
-           
-        }
-
-        .confirmation_buttons{
-            display: flex;
-            justify-content: flex-end;
-
-            .no_btn{
-                color: #ff0000;
-            }
+        .no_btn{
+            color: #ff0000;
         }
     }
-    
 }
 
 

@@ -24,8 +24,8 @@ const Home = () => {
 
     const [search, setSearch] = useState('');
     const [showForm, setShowForm] = useState(false);
-    const [isUpdating, setUpdating] = useState(false);
     const [showConfirmation, setShowConfirmation] = useState(false);
+    const [isUpdating, setUpdating] = useState(false);
     const [fromMultipleDelete, setFromMultiple] = useState(false);
 
     const notifyDeleteSuccess = (note) => toast.success(note,{toastId: 'success1'}); const notifySuccess = (note) => toast.success(note);
@@ -51,7 +51,7 @@ const Home = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!DESCRIPTION || !WEBSITE || !EMAIL || !PASSWORD || !DATE){
+        if (!DESCRIPTION.trimStart() || !WEBSITE.trimStart() || !EMAIL.trimStart() || !PASSWORD.trimStart() || !DATE){
             notifyWarning('Please fill up all fields!');
         } else {
             if (!isUpdating){
@@ -79,13 +79,14 @@ const Home = () => {
         }
         setFromMultiple(false);
     }
-
     const handleInputChange = (e) => {
         const {name, value} = e.target;
-        setState({ ...state, [name]: value});
+        setState({ ...state, [name]: value.trimStart()});
     };
     // --------------------------------------------------------------------------------------------------------------------------
    
+
+
     //CRUD -----------------------------------------------------------------------------------------------------------------------------
     const retrieve = async () => {
         const response = await axios.get("http://localhost:3001/api/read");
@@ -116,6 +117,8 @@ const Home = () => {
         }).then(() => {notifySuccess('Account updated!'); reset();});
     } 
     //----------------------------------------------------------------------------------------------------------------------------
+    
+
     
     var s= false;
     const toggleP = (i) => {
@@ -165,12 +168,12 @@ const Home = () => {
                         <TableHead>
                         <TableRow className="table-headers">
                             <TableCell><i onClick={() => {setShowConfirmation(true); setFromMultiple(true);}} className="fa-solid fa-trash"></i></TableCell>
-                            <TableCell>ID</TableCell>
-                            <TableCell>Description</TableCell>
-                            <TableCell>Website/App</TableCell>
-                            <TableCell>Email/Phone</TableCell>
-                            <TableCell>Password</TableCell>
-                            <TableCell>Date Added</TableCell>
+                            <TableCell className='cell-title'>ID</TableCell>
+                            <TableCell className='cell-title'>Description</TableCell>
+                            <TableCell className='cell-title'>Website/App</TableCell>
+                            <TableCell className='cell-title'>Email/Phone</TableCell>
+                            <TableCell className='cell-title'>Password</TableCell>
+                            <TableCell className='cell-title'>Date Added</TableCell>
                             <TableCell className='control_panel'>Controls</TableCell>
                         </TableRow>
                         </TableHead>

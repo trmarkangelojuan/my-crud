@@ -54,6 +54,9 @@
 .main-page .content .tb-container .table-headers {
   background-color: #f3f3f3;
 }
+.main-page .content .tb-container .table-headers .cell-title, .main-page .content .tb-container .table-headers .control_panel {
+  font-weight: bold;
+}
 .main-page .content .tb-container .table-headers .control_panel {
   text-align: center;
 }
@@ -72,7 +75,8 @@
 .main-page .content .tb-container .fa-solid {
   cursor: pointer;
 }
-.main-page .form_dialog {
+
+.form_dialog {
   position: absolute;
   top: 0;
   width: 100%;
@@ -84,8 +88,8 @@
   flex-direction: column;
   position: fixed;
 }
-.main-page .form_dialog .form_container {
-  box-shadow: 1px 2px;
+.form_dialog .form_container {
+  box-shadow: 1px 1px;
   border-radius: 10px;
   width: 40%;
   background: #f3f3f3;
@@ -94,37 +98,38 @@
   display: flex;
   flex-direction: column;
 }
-.main-page .form_dialog .form_container .form_header {
+.form_dialog .form_container .form_header {
   display: flex;
   justify-content: space-between;
   padding: 0;
   border-bottom: 1px #181718 solid;
 }
-.main-page .form_dialog .form_container .form_header div {
+.form_dialog .form_container .form_header div {
   display: flex;
 }
-.main-page .form_dialog .form_container .form_header div h3 {
+.form_dialog .form_container .form_header div h3 {
   margin-right: 3px;
   padding-bottom: 15px;
   color: #dcb900;
   font-family: "Courier New", Courier, monospace;
 }
-.main-page .form_dialog .form_container .form_header i {
+.form_dialog .form_container .form_header i {
   cursor: pointer;
 }
-.main-page .form_dialog .form_container form {
+.form_dialog .form_container form {
   display: flex;
   flex-direction: column;
   background-color: #f3f3f3;
   gap: 10px;
 }
-.main-page .form_dialog .form_container form .textfield {
+.form_dialog .form_container form .textfield {
   background-color: #edece2;
 }
-.main-page .form_dialog .form_container form .btn-add {
+.form_dialog .form_container form .btn-add {
   background-color: #181718;
 }
-.main-page .confirm_dialog {
+
+.confirm_dialog {
   width: 100%;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
@@ -135,17 +140,17 @@
   align-items: center;
   position: fixed;
 }
-.main-page .confirm_dialog .container {
-  box-shadow: 1px 2px;
+.confirm_dialog .container {
+  box-shadow: 1px 1px;
   width: 300px;
   border-radius: 10px;
   background-color: #f3f3f3;
   padding: 20px;
 }
-.main-page .confirm_dialog .confirmation_buttons {
+.confirm_dialog .confirmation_buttons {
   display: flex;
   justify-content: flex-end;
 }
-.main-page .confirm_dialog .confirmation_buttons .no_btn {
+.confirm_dialog .confirmation_buttons .no_btn {
   color: #ff0000;
 }/*# sourceMappingURL=Home.css.map */
